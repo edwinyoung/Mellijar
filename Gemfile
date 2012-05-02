@@ -30,6 +30,10 @@ group :development, :test do
   gem 'rspec-rails', ' 2.9.0'
 end
 
+group :test do
+  gem 'capybara'
+end
+
 group :development do
   gem 'hpricot'
   gem 'ruby_parser'
