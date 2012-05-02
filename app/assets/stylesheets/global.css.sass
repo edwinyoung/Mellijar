@@ -1,0 +1,138 @@
+// Place all the styles related to the Honeyjar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass/reset"
+@import "compass/css3/images"
+@import "compass/utilities/general/hacks"
+
+@mixin position-center
+  margin:
+    left: auto
+    right: auto
+
+$green: #65d121
+$dark-green: darken($green, 20%)
+$gray: #111
+$light-gray: #777
+$font-size: 1.6em
+$header-height: 2.25em
+$h1-size: 1.5em
+
+body
+  font:
+    family: Verdana, Helvetica, Arial, sans-serif
+    size: 62.5%
+
+ul
+  list-style-type: none
+
+a
+  text-decoration: none
+  color: $green
+
+a:hover, a:active, a:focus
+  text-decoration: underline
+
+a:visited
+  text-decoration: none
+  color: $dark-green
+
+p
+  margin:
+    bottom: 0.2em
+    top: 0.2em
+
+h1, h2, h3, h4, h5, h6
+  font:
+    family: Molengo, Belleza, Helvetica, Verdana, Arial, sans-serif
+    weight: 600
+
+h1
+  font-size: $h1-size
+  margin-bottom: 0.2em
+
+h2
+  font-size: $h1-size / 1.1
+  margin-bottom: 0.2em
+
+h3
+  font-size: $h1-size / 1.2
+  margin-bottom: 0.2em
+
+h4
+  font-size: $h1-size / 1.3
+  margin-bottom: 0.2em
+
+h5
+  font-size: $h1-size / 1.4
+  margin-bottom: 0.2em
+
+h6
+  font-size: $h1-size / 1.5
+  margin-bottom: 0.2em
+
+#header
+  top: 0
+  left: 0
+  position: fixed
+  clear: both
+  line-height: $header-height
+  width: 100%
+  @include filter-gradient(lighten($gray, 20%), $gray)
+  background: $gray
+  @include background(linear-gradient(top, lighten($gray, 20%), $gray))
+  span
+    color: #fff
+    font:
+      family: Molengo, Belleza, Rosario, sans-serif
+      weight: 600
+      size: $header-height
+    line-height: $header-height
+    margin: 0
+    padding: $header-height / 4.5
+  .left-nav span
+    border-right: 1px dotted #fff
+  .right-nav span
+    border-left: 1px dotted #fff
+  span:hover, span:active, span:focus
+    @include filter-gradient($green, $dark-green)
+    background: $green
+    @include background(linear-gradient(top, $green, $dark-green))
+  a:hover, a:active, a:focus
+    text-decoration: none
+
+#wrapper
+  width: 87.5%
+  min-width: 1000px
+  margin-top: $header-height + 2em
+  @include position-center
+  font-size: $font-size
+
+#footer
+  margin-top: 1em
+  clear: both
+  font:
+    size: $font-size / 2
+    family: Molengo, Belleza, Helvetica, Verdana, Arial, sans-serif
+  ul li
+    position: relative
+    float: left
+    margin:
+      left: 0.5em
+      right: 0.5em
+  a
+    text-decoration: none
+    color: $light-gray
+    border-bottom: 1px dotted $light-gray
+  a:hover, a:active, a:focus
+    text-decoration: none
+    color: darken($light-gray, 20%)
+    border-bottom: 1px solid darken($light-gray, 20%)
+
+.left-nav
+  position: relative
+  float: left
+
+.right-nav
+  position: relative
+  float: right
