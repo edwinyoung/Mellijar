@@ -1,0 +1,41 @@
+@import "compass/css3/border-radius"
+@import "compass/css3/images"
+
+$border-rounding: 0.2em
+$green: #65d121
+$dark-green: darken($green, 20%)
+$gray: #111
+$light-gray: #777
+
+label, input
+  display: block
+
+input[type=text], input[type=password]
+  font-size: 1.3em
+  line-height: 1.5em
+  border: 1px solid gray
+  @include border-radius($border-rounding, $border-rounding)
+
+input[type=submit]
+  font:
+    size: 1.2em
+    weight: bold
+  color: #fff
+  padding: 0.2em 0.8em
+  @include filter-gradient($green, $dark-green)
+  background: $green
+  @include background(linear-gradient(top, $green, $dark-green))
+  border: 1px solid gray
+  @include border-radius($border-rounding, $border-rounding)
+
+#signin_container
+  a
+    text-decoration: none
+    color: $light-gray
+    border-bottom: 1px dotted $light-gray
+    margin:
+      left: 9em
+  a:hover, a:active, a:focus
+    text-decoration: none
+    color: darken($light-gray, 20%)
+    border-bottom: 1px solid darken($light-gray, 20%)

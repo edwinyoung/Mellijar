@@ -1,0 +1,16 @@
+= provide(:title, "Sign up")
+= stylesheet_link_tag "signup", media: "all"
+= render "layouts/home_header"
+= javascript_include_tag "signup"
+#wrapper
+  #signin_container
+    = form_for(@user) do |f|
+
+      = f.text_field :fname
+      = f.text_field :lname
+      = f.text_field :email
+      = f.password_field :password
+      = f.password_field :password_confirmation
+
+      = f.submit "Sign up"
+  = render "layouts/footer"
