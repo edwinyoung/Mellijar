@@ -1,20 +1,28 @@
-@import "compass/css3/border-radius"
 @import "compass/css3/images"
 
-$border-rounding: 0.2em
 $green: #65d121
 $dark-green: darken($green, 20%)
 $gray: #111
 $light-gray: #777
 
-label, input
+label
   display: block
+  margin: 0.0em 10px
+  line-height: 1.6em
 
 input[type=text], input[type=password]
-  font-size: 1.3em
-  line-height: 1.5em
-  border: 1px solid gray
-  @include border-radius($border-rounding, $border-rounding)
+  font-size: 0.9em
+  line-height: 1.3em
+  border: 1px solid $light-gray
+  display: block
+
+textarea
+  font:
+    family: Helvetica, Verdana, sans-serif
+    size: 0.9em
+  border: 1px solid $light-gray
+  resize: none
+
 
 #signin_container
   a
@@ -27,3 +35,12 @@ input[type=text], input[type=password]
     text-decoration: none
     color: darken($light-gray, 20%)
     border-bottom: 1px solid darken($light-gray, 20%)
+
+.form_labels
+  width: 9%
+
+.form_inputs
+  width: 50%
+
+label[for=product_description]
+  margin-bottom: 10 * 0.9em

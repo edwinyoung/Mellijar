@@ -1,3 +1,4 @@
+require "digest"
 class User < ActiveRecord::Base
   attr_accessible :email, :fname, :lname, :password, :password_confirmation
 
@@ -8,4 +9,12 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true  
+
+  before_save :hash_password
+
+  private
+    def hash_password
+      self.password = Digest::SHA1.hexdigest(self.password)
+    end
+
 end

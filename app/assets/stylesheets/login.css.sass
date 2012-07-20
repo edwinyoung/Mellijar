@@ -1,0 +1,53 @@
+@import "compass/css3/images"
+
+$green: #65d121
+$dark-green: darken($green, 20%)
+$gray: #111
+$light-gray: #777
+
+input[type=text], input[type=password]
+  font-size: 0.9em
+  line-height: 1.3em
+  border: 1px solid $light-gray
+  width: 16em
+
+input[type=submit]
+  font:
+    size: 0.9em
+    weight: bold
+  color: #fff
+  padding: 0.2em 0.8em
+  @include filter-gradient($green, $dark-green)
+  background: $green
+  @include background(linear-gradient(top, $green, $dark-green))
+  border: 1px solid gray
+
+#signin_container
+  a
+    text-decoration: none
+    color: $light-gray
+    border-bottom: 1px dotted $light-gray
+    margin:
+      left: 9em
+  a:hover, a:active, a:focus
+    text-decoration: none
+    color: darken($light-gray, 20%)
+    border-bottom: 1px solid darken($light-gray, 20%)
+
+.login_left
+  position: relative
+  float: left
+  width: 45%
+  margin-top: 2em
+
+.login_right
+  position: relative
+  float: right
+  width: 45%
+  margin-top: 2em
+
+.form_line
+  position: relative
+  float: right
+  display: block
+  clear: both

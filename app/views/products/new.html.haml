@@ -1,0 +1,24 @@
+= provide(:title, "Add Product")
+= stylesheet_link_tag "addproduct"
+= javascript_include_tag "addproduct"
+= render "layouts/home_header"
+#wrapper
+  %h1 Add Product
+  = form_for(@product) do |f|
+    .form_labels
+      = f.label :name
+      = f.label :price
+      = f.label :description
+      = f.label :quantity
+      = f.label :start_date, "Sale starts"
+      = f.label :end_date, "Sale ends"
+
+    .form_inputs
+      = f.text_field :name
+      = f.text_field :price
+      = f.text_area :description, cols: 29, rows: 10
+      = f.text_field :quantity
+      = f.text_field :start_date
+      = f.text_field :end_date
+      = f.submit "Add Product"
+= render "layouts/footer"

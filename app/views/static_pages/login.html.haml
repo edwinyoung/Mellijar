@@ -1,0 +1,43 @@
+= provide(:title, "Log In")
+= stylesheet_link_tag "login"
+= render "layouts/home_header"
+#wrapper
+  .login_left
+    %h1 New to Melli Bee?
+    %p Sign up to get exclusive access to independent designers around the world. Best of all, membership is free!
+    = form_for(@user) do |f|
+      
+      .form_labels
+        = f.label :email
+        = f.label :fname, "First name"
+        = f.label :lname, "Last name"
+        = f.label :password, "Password (min. 6 characters)"
+        = f.label :password_confirmation
+
+      .form_inputs
+        = f.text_field :email
+        = f.text_field :fname
+        = f.text_field :lname
+        = f.password_field :password
+        = f.password_field :password_confirmation
+      
+        %p By signing up, you agree to Melli Bee's <a href='/terms'>Terms of Service</a> and <a href='/privacy'>Privacy Policy</a>.
+ 
+      .form_line 
+        = f.submit "Sign up"
+  .login_right
+    %h2 Returning User?
+    = form_for(:session, url: sessions_path) do |f|
+
+      .form_line
+        = f.label :email
+        = f.text_field :email
+      
+      .form_line
+        = f.label :password
+        = f.password_field :password
+
+      .form_line
+        = f.submit "Log in"
+
+= render "layouts/footer"

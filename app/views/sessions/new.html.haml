@@ -1,7 +1,7 @@
 = provide(:title, "Sign in")
 = stylesheet_link_tag "signin", media: "all"
-= render "layouts/home_header"
 = javascript_include_tag "signin"
+= render "layouts/home_header"
 #wrapper
   %a.btn{href: "/signup"} Sign Up
   #signin_container
@@ -11,4 +11,4 @@
       = f.password_field :password
 
       = f.submit "Sign in"
-  = render "layouts/footer"
+= render "layouts/footer"

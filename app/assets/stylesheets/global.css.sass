@@ -12,11 +12,15 @@
 
 $green: #65d121
 $dark-green: darken($green, 20%)
-$gray: #111
+$gray: #080808
 $light-gray: #777
 $font-size: 1.6em
 $header-height: 2.25em
 $h1-size: 1.5em
+
+html, body
+  height: 78.5%
+  margin: 0
 
 body
   font:
@@ -71,13 +75,37 @@ h6
   font-size: $h1-size / 1.5
   margin-bottom: 0.2em
 
+input
+  margin: 0.2em 0
+
+input[type=text], input[type=password]
+  font-size: 0.9em
+  line-height: 1.3em
+  border: 1px solid $light-gray
+  display: block
+
+input[type=submit]
+  font:
+    size: 1.05em
+    weight: bold
+  color: #fff
+  padding: 0.4em 1.4em
+  @include filter-gradient($green, $dark-green)
+  background: $green
+  @include background(linear-gradient(top, $green, $dark-green))
+  border: 1px solid gray
+  display: block
+
 #header
   top: 0
   left: 0
-  position: fixed
+  position: relative
+  float: left
   clear: both
+  margin-bottom: 2em
   line-height: $header-height
   width: 100%
+  z-index: 10
   @include filter-gradient(lighten($gray, 20%), $gray)
   background: $gray
   @include background(linear-gradient(top, lighten($gray, 20%), $gray))
@@ -103,31 +131,53 @@ h6
 
 #wrapper
   width: 87.5%
-  min-width: 1000px
-  margin-top: $header-height + 2em
+  min-width: 1000px 
+  min-height: 100%
+  margin:
+    left: auto
+    right: auto
+    bottom: -9em
+  padding-bottom: 11em
   @include position-center
   font-size: $font-size
+  min-height: 100%
+  height: auto !important
+  height: 100%
 
 #footer
+  height: 9em
+  width: 87.5%
+  position: relative
+  bottom: 0
+  left: 0
   margin-top: 1em
+  padding: 1em 6.25%
+  line-height: 2.0em
   clear: both
+  background-color: $gray
   font:
-    size: $font-size / 2
+    size: $font-size * 0.85
     family: Molengo, Belleza, Helvetica, Verdana, Arial, sans-serif
-  ul li
+  color: #fff
+  ul
     position: relative
     float: left
-    margin:
-      left: 0.5em
-      right: 0.5em
+    margin-right: 1.0em
   a
     text-decoration: none
-    color: $light-gray
-    border-bottom: 1px dotted $light-gray
+    color: #fff
   a:hover, a:active, a:focus
-    text-decoration: none
-    color: darken($light-gray, 20%)
-    border-bottom: 1px solid darken($light-gray, 20%)
+    text-decoration: underline
+    color: #fff
+  .left-nav 
+    min-width: 500px
+    ul
+      margin-right: 4.0em
+  .right-nav
+    color: #fff
+    position: absolute
+    bottom: 0
+    left: 85%
 
 .left-nav
   position: relative
@@ -137,5 +187,22 @@ h6
   position: relative
   float: right
 
-.textfield_hint
-  color: $light-gray
+.copyright
+  font-family: Helvetica, Verdana, Arial, sans-serif
+
+.form_labels
+  position: relative
+  float: left
+  text-align: right
+  display: block
+
+.form_inputs
+  position: relative
+  float: left
+  display: block
+
+.push
+  height: 9em
+
+* html #wrapper
+  height: 87.5%

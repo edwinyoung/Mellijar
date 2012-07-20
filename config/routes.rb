@@ -1,11 +1,19 @@
 Honeyjar::Application.routes.draw do
 
   resources :users
+  resources :products
 
   root to: "sessions#new"
+
+  match "/login", to: "static_pages#login", as: "login"
   
   match "/signin", to: "sessions#new", as: "sessions"
   match "/signup", to: "users#new", as: "signup"
+
+  match "/privacy", to: "static_pages#privacy", as: "privacy"
+  match "/terms", to: "static_pages#terms", as: "terms"
+
+  match "/products/new", to: "products#new", as: "new_product"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
